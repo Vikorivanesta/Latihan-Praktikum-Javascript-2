@@ -10,14 +10,108 @@
         body {
             margin: 10px;
         }
+        td {
+            font-weight: 500;
+        }
+        input {
+            max-width: 50px;
+            border: none;
+        }
+        #calculator {
+            background-color: #f0f0f0;
+            max-width: max-content;
+            color: #03256c;
+            display: none;
+        }
+        table {
+            border-collapse: separate;
+            border-spacing: 10px; 
+        }
+        .table-head {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <button onclick="cekAngka()">Cek Angka</button>
-    <button onclick="cekStatus()">Konfirmasi</button>
-    <p id="paragraph"></p>
-    <div id="calculator">
-
+    <div class="d-grid gap-2">
+        <button class="btn btn-primary btn-lg mb-2" onclick="cekAngka()">Tugas 1</button>
+        <p id="paragraph1"></p>
+        <button class="btn btn-danger btn-lg mb-2" onclick="cekStatus()">Tugas 2</button>
+        <p id="paragraph2"></p>
+        <button class="btn btn-success btn-lg mb-3" onclick="show('calculator')">Tugas 3</button>
+    </div>
+    <div class="mx-auto" id="calculator">
+        <table class="p-3">
+            <thead class=>
+                <tr>
+                    <td colspan="3" class="table-head">
+                        <h1 style="color: rgb(255, 153, 0);" class="lh-1">ITEMS YOU CONSUME DAILY</h1>
+                        <p>Please enter the quantity for <b>each day</b></p>
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>DAY</th>
+                    <th>YEAR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Plastic Bottle</td>
+                    <td><input type="number" id="pbDay" oninput="updateYear('pbDay', 'pbYear')"></td>
+                    <td id="pbYear"></td>
+                </tr>
+                <tr>
+                    <td>Plastic Cups</td>
+                    <td><input type="number" id="pcDay" oninput="updateYear('pcDay', 'pcYear')"></td>
+                    <td id="pcYear"></td>
+                </tr>
+                <tr>
+                    <td>Straws</td>
+                    <td><input type="number" id="sDay" oninput="updateYear('sDay', 'sYear')"></td>
+                    <td id="sYear"></td>
+                </tr>
+                <tr>
+                    <td>Cotton Swabs</td>
+                    <td><input type="number" id="csDay" oninput="updateYear('csDay', 'csYear')"></td>
+                    <td id="csYear"></td>
+                </tr>
+                <tr>
+                    <td>Cigarette Butts</td>
+                    <td><input type="number" id="cbDay" oninput="updateYear('cbDay', 'cbYear')"></td>
+                    <td id="cbYear"></td>
+                </tr>
+                <tr>
+                    <td>Plastic Resealable Bags</td>
+                    <td><input type="number" id="prbDay" oninput="updateYear('prbDay', 'prbYear')"></td>
+                    <td id="prbYear"></td>
+                </tr>
+                <tr>
+                    <td>Plastic Cling Wrap</td>
+                    <td><input type="number" id="pcwDay" oninput="updateYear('pcwDay', 'pcwYear')"></td>
+                    <td id="pcwYear"></td>
+                </tr>
+                <tr>
+                    <td>Plastic Silverware</td>
+                    <td><input type="number" id="psDay" oninput="updateYear('psDay', 'psYear')"></td>
+                    <td id="psYear"></td>
+                </tr>
+                <tr>
+                    <td>Plastic Stirrers</td>
+                    <td><input type="number" id="pstDay" oninput="updateYear('pstDay', 'pstYear')"></td>
+                    <td id="pstYear"></td>
+                </tr>
+                <tr>
+                    <td>Food Containers</td>
+                    <td><input type="number" id="fcDay" oninput="updateYear('fcDay', 'fcYear')"></td>
+                    <td id="fcYear"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Current Yearly Consumption</td>
+                    <td id="totalConsumption"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <script src="myScript.js"></script>
